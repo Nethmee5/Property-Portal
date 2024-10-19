@@ -4,4 +4,4 @@
 
 <p>RUN NPM 'RUN DEV'</p>
 
-<h4>Link to project-> https://dainty-lolly-9e1890.netlify.app/</h4>
+<h4>Link to project-> https://propertyportalnk.netlify.app/</h4>
