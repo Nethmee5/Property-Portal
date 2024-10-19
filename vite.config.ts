@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   server: {
     host: 'localhost',
-    port: 3001,
+    port: 3000,
   },
   test: {
     globals: true,
