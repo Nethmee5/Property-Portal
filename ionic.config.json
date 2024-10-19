@@ -1,0 +1,7 @@
+{
+  "name": "property-portal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
