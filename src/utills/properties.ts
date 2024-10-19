@@ -9,7 +9,7 @@ import {
   property8,
   property9,
   property10,
-} from '../../assets/index';
+} from '../assets/index';
 
 const properties = [
   {

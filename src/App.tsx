@@ -18,21 +18,13 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* import '@ionic/react/css/palettes/dark.always.css'; */
-/* import '@ionic/react/css/palettes/dark.class.css'; */
 import '@ionic/react/css/palettes/dark.system.css';
-
-/* Theme variables */
 import './theme/variables.css';
 import HomePage from './pages/HomePage';
 import AgentListingPage from './pages/AgentListingPage';
+import CustomerViewPage from './pages/CustomerViewPage';
+import PropertyDetailPage from './pages/PropertyDetailPage';
+import StatisticsPage from './pages/StatisticsPage';
 
 setupIonicReact();
 
@@ -40,8 +32,12 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/" component={HomePage}/>
-        <Route exact path="/agent-listing" component={AgentListingPage}/>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/agent-listing" component={AgentListingPage} />
+        <Route exact path="/customer-view" component={CustomerViewPage} />
+        <Route exact path="/property-detail" component={PropertyDetailPage} />
+        <Route exact path="/statistics" component={StatisticsPage} />
+        <Redirect to="/" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

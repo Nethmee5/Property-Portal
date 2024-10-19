@@ -1,0 +1,18 @@
+
+  .propertyCard {
+    margin: 0.5rem;
+  }
+  .heading-list{
+    text-align: center;
+  }  
+  .filter-container {
+    padding: 20px !important;
+    margin-top: 20px !important;
+    border-radius: 8px !important;
+  }
+  .filter-icon-label{
+   padding: 10px;
+  }
+  .btnFilter{
+    margin-top: 20px;
+  }

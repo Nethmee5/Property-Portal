@@ -3,7 +3,24 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
+.heading-add {
+  text-align: center;
+}
+.input-container {
+  padding: 20px !important;
+  margin-top: 20px !important;
+  border-radius: 8px !important;
+}
+.icon-label {
+  padding: 10px;
+}
+.btnAddUpdate {
+  margin-top: 20px;
+}
+.btnShowCustomerView {
+  margin-top: 20px;
+  margin-left: 20px;
+}
 .propertyCard {
   margin: 0.5rem;
   flex: 1 1 calc(33.33% - 1rem);

@@ -1,16 +1,21 @@
 import { IonButton, IonContent, IonPage } from '@ionic/react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import properties from './properties';
+import properties from '../../utills/properties';
 import './index.css';
 
 const HomePage: React.FC = () => {
   return (
-    <IonPage>
+    <IonPage className='container'>
+      <h1>Welcome to the Property Portal!</h1>
+      
       <IonContent>
-        <div className="container">
+      <IonButton routerLink="/agent-listing" className='btnShowList'>Agent Listings</IonButton>
+
+        <div className="icon-content-container">
           {properties.map((property) => (
             <Card key={property.id}>
               <CardMedia
+                className='card-container'
                 height={150}
                 component="img"
                 alt={property.location}
@@ -25,7 +30,6 @@ const HomePage: React.FC = () => {
             </Card>
           ))}
         </div>
-        <IonButton routerLink="/agent-listing">Agent Listings</IonButton>
       </IonContent>
     </IonPage>
   );
