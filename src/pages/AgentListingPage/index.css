@@ -1,0 +1,23 @@
+.IonList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.propertyCard {
+  margin: 0.5rem;
+  flex: 1 1 calc(33.33% - 1rem);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .propertyCard {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .propertyCard {
+    flex: 1 1 100%;
+  }
+}
