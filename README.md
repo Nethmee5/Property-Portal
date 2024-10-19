@@ -30,10 +30,12 @@ Welcome to the user manual for our Property Management application. This guide w
 - When viewing a property, users are redirected to a separate page that displays comprehensive details, including relevant images and information about the property.
 
 ### Analytics
-- On the property detail screen, there is a **"View Analytics"** button.
+- On the property detail screen, there is a **"View Statistics"** button.
 - Clicking this button allows users to see various charts and analytics related to the properties available.
 
 ## Conclusion
 This user manual aims to provide a comprehensive overview of the application features. If you encounter any issues or have questions, please refer to our support documentation or contact the support team.
 
 Thank you for using our Property Management application!
+
+
