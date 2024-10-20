@@ -9,6 +9,8 @@ import {
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import './index.css';
 
 interface Property {
@@ -23,6 +25,13 @@ interface Property {
   rooms: number;
   bathrooms: number;
 }
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const AgentListingPage: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
@@ -39,6 +48,7 @@ const AgentListingPage: React.FC = () => {
   });
   const [editId, setEditId] = useState<number | null>(null);
   const history = useHistory();
+  const [openSnackbar, setOpenSnackbar] = useState(false); 
 
   useEffect(() => {
     const storedProperties = localStorage.getItem('properties');
@@ -53,6 +63,7 @@ const AgentListingPage: React.FC = () => {
   };
 
   const handleAddEditProperty = () => {
+
     const newProperty: Property = {
       id: editId != null ? editId : Date.now(),
       location: formData.location,
@@ -91,29 +102,8 @@ const AgentListingPage: React.FC = () => {
       'properties',
       JSON.stringify([...properties, newProperty])
     );
-  };
 
-  const handleEditProperty = (property: Property) => {
-    setFormData({
-      location: property.location,
-      price: property.price,
-      image: property.image,
-      description: property.description || '',
-      city: property.city,
-      state: property.state,
-      type: property.type,
-      rooms: property.rooms,
-      bathrooms: property.bathrooms,
-    });
-    setEditId(property.id);
-  };
-
-  const handleDeleteProperty = (id: number) => {
-    const filteredProperties = properties.filter(
-      (property) => property.id !== id
-    );
-    setProperties(filteredProperties);
-    localStorage.setItem('properties', JSON.stringify(filteredProperties));
+    setOpenSnackbar(true);
   };
 
   const handleViewList = () => {
@@ -122,7 +112,15 @@ const AgentListingPage: React.FC = () => {
       state: { properties: properties },
     });
   };
-
+  const handleSnackbarClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSnackbar(false);
+  };
   return (
     <IonPage>
       <IonContent>
@@ -211,12 +209,21 @@ const AgentListingPage: React.FC = () => {
               onIonChange={handleInputChange}
             />
           </IonItem>
-          <IonButton className="btnAddUpdate" onClick={handleAddEditProperty}>
-            {editId ? 'Update Property' : 'Submit'}
+          <IonButton className="btnAdd" onClick={handleAddEditProperty}>
+            Submit
           </IonButton>
           <IonButton onClick={handleViewList} className="btnShowCustomerView">
             View List
           </IonButton>
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={2000}
+          onClose={handleSnackbarClose}
+        >
+          <Alert onClose={handleSnackbarClose} severity="success">
+           Property added successfully!
+          </Alert>
+        </Snackbar>
         </div>
       </IonContent>
     </IonPage>
