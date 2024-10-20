@@ -4,4 +4,6 @@
 
 <p>RUN NPM 'RUN DEV'</p>
 
-<h4>Link to project-> https://dainty-lolly-9e1890.netlify.app/</h4>
+<p> Open 'localhost:3000'</p>
+
+<h4>Link to project-> https://propertyportalnk.netlify.app/</h4>
