@@ -6,4 +6,4 @@
 
 <p> Open 'localhost:3000'</p>
 
-<h4>Link to project-> https://propertyportalnk.netlify.app/</h4>
+<h4>Link to project-> https://propertyportalweb.netlify.app/ </h4>
